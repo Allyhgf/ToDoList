@@ -9,10 +9,11 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("p'ublic"));
+app.use(express.static("public"));
 
 //Esquema da database default
-mongoose.connect("mongodb+srv://allysonhansel21:zb530vWnK7pYiLl4@cluster0.r3sy6xh.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://allysonhansel21:zb530vWnK7pYiLl4@cluster0.r3sy6xh.mongodb.net/?retryWrites=true&w=majority", {dbName: "todolistDB"}, {useNewUrlParser: true});
+//senha admin MongoDB Atlas: zb530vWnK7pYiLl4
 
 const itemsSchema = {
   name: String
